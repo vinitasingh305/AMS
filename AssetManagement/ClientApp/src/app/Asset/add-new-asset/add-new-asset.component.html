@@ -1,0 +1,142 @@
+<div class="card">
+  <div class="card-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <!--   <div class="container-fluid">  -->
+          <h2>Add New Asset</h2>
+
+          <form [formGroup]="addNewAsset">
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label>Asset Name</label>
+                <input type="text" formControlName="assetName" [class.is-invalid]="assetName.invalid && assetName.touched" class="form-control">
+                <!--<small class="text-danger" [class.d-none]="assetName.valid || assetName.untouched">AssetName is required</small>-->
+                <div *ngIf="assetName.errors" [ngClass]="'error'">
+                  <div *ngIf="assetName.errors.required">
+                    <small class="text-danger" [class.d-none]="assetName.valid || assetName.untouched">AssetName is required.</small>
+                  </div>
+                  <div *ngIf="assetName.errors.minlength">
+                    <small class="text-danger" [class.d-none]="assetName.valid || assetName.untouched">AssetName must be of at least 3 characters long.</small>
+                  </div>
+                  <div *ngIf="assetName.errors.maxlength">
+                    <small class="text-danger" [class.d-none]="assetName.valid || assetName.untouched">AssetName cannot be greater than 50 characters</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label>Type of Item</label>
+                <input type="text" formControlName="typeOfItem" [class.is-invalid]="typeOfItem.invalid && typeOfItem.touched" class="form-control">
+                <div *ngIf="typeOfItem.errors" [ngClass]="'error'">
+                  <div *ngIf="typeOfItem.errors.required">
+                    <small class="text-danger" [class.d-none]="typeOfItem.valid || typeOfItem.untouched">TypeOfItem is required.</small>
+                  </div>
+                  <div *ngIf="typeOfItem.errors.minlength">
+                    <small class="text-danger" [class.d-none]="typeOfItem.valid || typeOfItem.untouched">TypeOfItem must be of at least 3 characters long.</small>
+                  </div>
+                  <div *ngIf="typeOfItem.errors.maxlength">
+                    <small class="text-danger" [class.d-none]="typeOfItem.valid || typeOfItem.untouched">TypeOfItem cannot be greater than 50 characters</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" formControlName="quantity" class="form-control" id="quantity" [class.is-invalid]="quantity.invalid && quantity.touched">
+                <small class="text-danger" [class.d-none]="quantity.valid || quantity.untouched">Quantity is required</small>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label for="itemDesc">Item Desc</label>
+                <textarea class="form-control" name="itemDesc" id="itemDesc" formControlName="itemDesc" rows="6"
+                          placeholder="Add additional notes here."></textarea>
+                <div *ngIf="itemDesc.errors" [ngClass]="'error'">
+                  <div *ngIf="itemDesc.errors.required">
+                    <small class="text-danger" [class.d-none]="itemDesc.valid || itemDesc.untouched">Description is required.</small>
+                  </div>
+                  <div *ngIf="itemDesc.errors.minlength">
+                    <small class="text-danger" [class.d-none]="itemDesc.valid || itemDesc.untouched">Description must be of at least 3 characters long.</small>
+                  </div>
+                  <div *ngIf="itemDesc.errors.maxlength">
+                    <small class="text-danger" [class.d-none]="itemDesc.valid || itemDesc.untouched">Description cannot be greater than 500 characters</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label>Item Brand</label>
+                <input type="text" formControlName="itemBrand" [class.is-invalid]="itemBrand.invalid && itemBrand.touched" class="form-control">
+                <div *ngIf="itemBrand.errors" [ngClass]="'error'">
+                  <div *ngIf="itemBrand.errors.required">
+                    <small class="text-danger" [class.d-none]="itemBrand.valid || itemBrand.untouched">ItemBrand is required.</small>
+                  </div>
+                  <div *ngIf="itemBrand.errors.minlength">
+                    <small class="text-danger" [class.d-none]="itemBrand.valid || itemBrand.untouched">ItemBrand must be of at least 3 characters long.</small>
+                  </div>
+                  <div *ngIf="itemBrand.errors.maxlength">
+                    <small class="text-danger" [class.d-none]="itemBrand.valid || itemBrand.untouched">ItemBrand cannot be greater than 50 characters</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label>BU Name</label>
+                <input type="text" formControlName="bUName" [class.is-invalid]="bUName.invalid && bUName.touched" class="form-control">
+                <div *ngIf="bUName.errors" [ngClass]="'error'">
+                  <div *ngIf="bUName.errors.required">
+                    <small class="text-danger" [class.d-none]="bUName.valid || bUName.untouched">BUName is required.</small>
+                  </div>
+                  <div *ngIf="bUName.errors.minlength">
+                    <small class="text-danger" [class.d-none]="bUName.valid || bUName.untouched">BUName must be of at least 3 characters long.</small>
+                  </div>
+                  <div *ngIf="bUName.errors.maxlength">
+                    <small class="text-danger" [class.d-none]="bUName.valid || bUName.untouched">BUName cannot be greater than 50 characters</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label for="createdBy">Created By</label>
+                <input type="text" formControlName="createdBy" class="form-control" id="createdBy">
+                <div *ngIf="createdBy.errors" [ngClass]="'error'">
+                  <div *ngIf="createdBy.errors.required">
+                    <small class="text-danger" [class.d-none]="createdBy.valid || createdBy.untouched">CreatedBy is required.</small>
+                  </div>
+                  <div *ngIf="createdBy.errors.minlength">
+                    <small class="text-danger" [class.d-none]="createdBy.valid || createdBy.untouched">CreatedBy must be at least 3 characters long.</small>
+                  </div>
+                  <div *ngIf="createdBy.errors.maxlength">
+                    <small class="text-danger" [class.d-none]="createdBy.valid || createdBy.untouched">CreatedBy cannot be greater than 50 characters</small>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-success" type="submit" [disabled]="!addNewAsset.valid" (click)="AddAssetData()">Save</button>
+                &nbsp;
+                <button class="btn btn-primary" type="button">Cancel</button>
+              </div>
+            </div>
+
+          </form>
+
+          <!--{{addNewAsset.status | json}}<br />
+          {{addNewAsset.value | json}}<br />
+          {{addNewAsset.value.customerName.valid}}-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

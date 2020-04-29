@@ -1,0 +1,136 @@
+.customer-table table ul li {
+  margin-bottom: 0px;
+}
+.custom-table tr:hover td {
+  background-color: #fff !important;
+}
+.cat-label {
+  color: #585858;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.cat-assigned {
+  background: #E5F3FF;
+  border: 1px solid #C9DBEB;
+  font-size: 8px;
+  text-transform: uppercase;
+  padding: 5px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.drow-down-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.submit-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 8px;
+  background-color: #ffffff;
+  top: 11px;
+  cursor: pointer;
+  border: 1px solid #0A599C;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+  .submit-icon::after {
+    left: 5px;
+    top: 3px;
+    width: 4px;
+    height: 7px;
+    border: solid #0a599c;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+    display: block;
+    position: absolute;
+  }
+.delete-que {
+  color: #0056A3;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 20px;
+}
+ul.question-icon {
+  margin-left: 30px;
+}
+
+.cat-label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.table ul li {
+  margin-bottom: 0px;
+}
+
+/* .actio-list{
+    background: #fff;
+    padding: 0px 20px;
+    position: absolute;
+    right: -20px;
+    opacity: 0;
+    top: 16px;
+    
+} */
+
+
+.delete-que {
+  color: #0056A3;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.submit-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 8px;
+  background-color: #ffffff;
+  top: 11px;
+  cursor: pointer;
+  border: 1px solid #0A599C;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+  .submit-icon::after {
+    left: 5px;
+    top: 3px;
+    width: 4px;
+    height: 7px;
+    border: solid #0a599c;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+.drow-down-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.que {
+  width: 95%;
+  padding-left: 10px;
+}
+
+.search-bar {
+  background: #fff;
+  margin: 0px 0px 10px 0px;
+}
+
+.padding {
+  padding: 10px 14px 9px 5px;
+}

@@ -1,0 +1,81 @@
+<div class="card">
+  <div class="card-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <!--   <div class="container-fluid">  -->
+          <h2>Add New Customer</h2>
+
+          <form [formGroup]="addNewCustomer">
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label>Customer Name</label>
+                <input type="text" formControlName="customername" [class.is-invalid]="customername.invalid && customername.touched" class="form-control">
+                <!--<small class="text-danger" [class.d-none]="customername.valid || customername.untouched">CustomerName is required</small>-->
+                <div *ngIf="customername.errors" [ngClass]="'error'">
+                  <div *ngIf="customername.errors.required">
+                    <small class="text-danger" [class.d-none]="customername.valid || customername.untouched">CustomerName is required.</small>
+                  </div>
+                  <div *ngIf="customername.errors.minlength">
+                    <small class="text-danger" [class.d-none]="customername.valid || customername.untouched">CustomerName must be of at least 3 characters long.</small>
+                  </div>
+                  <div *ngIf="customername.errors.maxlength">
+                    <small class="text-danger" [class.d-none]="customername.valid || customername.untouched">CustomerName cannot be greater than 50 characters</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label for="contactnumber">Contact Number</label>
+                <input type="number" formControlName="contactnumber" class="form-control" id="contactnumber" [class.is-invalid]="contactnumber.invalid && contactnumber.touched">
+                <small class="text-danger" [class.d-none]="contactnumber.valid || contactnumber.untouched">Contact Number must be atleast 10 digits</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label for="email">Email</label>
+                <input type="text" formControlName="email" class="form-control" id="email" [class.is-invalid]="email.invalid && email.touched">
+                <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <label for="createdBy">Created By</label>
+                <input type="text" formControlName="createdBy" class="form-control" id="createdBy">
+                <div *ngIf="createdBy.errors" [ngClass]="'error'">
+                  <div *ngIf="createdBy.errors.required">
+                    <small class="text-danger" [class.d-none]="createdBy.valid || createdBy.untouched">CreatedBy is required.</small>
+                  </div>
+                  <div *ngIf="createdBy.errors.minlength">
+                    <small class="text-danger" [class.d-none]="createdBy.valid || createdBy.untouched">CreatedBy must be at least 3 characters long.</small>
+                  </div>
+                  <div *ngIf="createdBy.errors.maxlength">
+                    <small class="text-danger" [class.d-none]="createdBy.valid || createdBy.untouched">CreatedBy cannot be greater than 50 characters</small>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-success" type="submit" [disabled]="!addNewCustomer.valid" (click)="AddCustomerData()">Save</button>
+                &nbsp;
+                <button class="btn btn-primary" type="button">Cancel</button>
+              </div>
+            </div>
+
+          </form>
+
+          {{addNewCustomer.status | json}}<br />
+          {{addNewCustomer.value | json}}<br />
+          {{addNewCustomer.value.customerName.valid}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

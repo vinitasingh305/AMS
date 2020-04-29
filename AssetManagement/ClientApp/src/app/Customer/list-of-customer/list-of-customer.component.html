@@ -1,0 +1,39 @@
+<p-table [columns]="cols" [value]="questions" [paginator]="true" [rows]="recordsPerPage" class="customer-table custom-table">
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns">
+        <span class="heading">{{col.header}}</span>
+      </th>
+      <th>
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-i="rowIndex" let-rowData let-columns="columns" let-row="rowData">
+    <!--{{i}}-->
+    <tr>
+      <td *ngFor="let col of columns">
+
+        <ul class="question-icon">
+          <li><div class="que">{{rowData[col.field]}}</div></li>
+        </ul>
+
+        <!--/t-->
+      </td>
+      <td class="assign-cat align-middle">
+        <div class="td-seperator"></div>
+        <span class="cat-label">Assign Category</span>
+        <div class="drow-down-wrapper">
+          <p-dropdown [options]="cities1" [(ngModel)]="newObject[rowData.id]">
+            <!--{{newObject[rowData.id]}}-->
+          </p-dropdown>
+          <span class="submit-icon" *ngIf="newObject[rowData.id]!=null" (click)="assignCategory(rowData.id,newObject[rowData.id],i)">
+            &nbsp;
+          </span>
+          <!--)"-->
+        </div>
+        <div class="delete-que" (click)="showDeletePopup(rowData.id,i)"><span class="delete-icon"></span>Delete</div>
+
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

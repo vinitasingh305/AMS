@@ -1,0 +1,12 @@
+/*.ng-valid,
+.ng-untouched {
+  border-color: lightgreen;
+}*/
+.ng-valid,
+.ng-valid.ng-touched {
+  border-color: lightgreen;
+}
+
+.ng-touched:not(form) {
+  border-color: lightcoral;
+}
